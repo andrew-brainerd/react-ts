@@ -1,16 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
 
 interface UserMessage {
-  name: string,
+  title: string,
   text: string
 }
 
-const Message = ({ name, text }: UserMessage): any => {
+const Title = styled.div`
+  font-size: 1.5em;
+  margin: 20px auto;
+`;
+
+const Text = styled.div`
+  font-style: italic;
+`;
+
+const Message = ({ title, text }: UserMessage): any => {
   return (
-    <div>
-      <p>Name: {name}</p>
-      <p>Message: {text}</p>
-    </div>
+    <>
+      <Title>{title}</Title>
+      <Text>{text}</Text>
+    </>
   );
 }
 

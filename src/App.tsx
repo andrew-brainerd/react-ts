@@ -1,15 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 import Message from './Message';
-import './App.css';
+
+const AppContainer = styled.div`
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  text-align: center;
+`;
 
 const App = () => {
   return (
-    <div className="App">
+    <AppContainer>
       <Message
-        name={'Andrew'}
+        title={'Welcome'}
         text={'Hello, Typescript!'}
       />
-    </div>
+    </AppContainer>
   );
 }
 
