@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-export interface ThemeList {
+interface ThemeList {
   [index: string]: Theme
 };
 
@@ -9,6 +9,11 @@ export interface Theme {
   background: string,
   headerColor: string,
   color: string
+};
+
+interface Context {
+  theme: object,
+  setTheme: Function
 };
 
 export const themes: ThemeList = {
@@ -38,7 +43,7 @@ export const themes: ThemeList = {
   },
 };
 
-export const ThemeContext = createContext({
+export const ThemeContext = createContext<Context>({
   theme: {},
   setTheme: (theme: Theme) => { }
 });

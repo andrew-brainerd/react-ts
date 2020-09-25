@@ -13,7 +13,9 @@ const Container = styled.div`
   border-radius: 5px;
   margin: 50px auto;
   padding: 10px 25px;
+  transition: 0.3s all ease-in;
   user-select: none;
+  width: 50%;
 `;
 
 const Title = styled.div`
