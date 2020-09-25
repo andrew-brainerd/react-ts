@@ -12,7 +12,7 @@ export interface Theme {
 };
 
 interface Context {
-  theme: object,
+  theme: Theme,
   setTheme: Function
 };
 
@@ -44,6 +44,6 @@ export const themes: ThemeList = {
 };
 
 export const ThemeContext = createContext<Context>({
-  theme: {},
+  theme: themes.purple,
   setTheme: (theme: Theme) => { }
 });
