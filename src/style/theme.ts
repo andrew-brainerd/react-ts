@@ -8,7 +8,9 @@ export interface Theme {
   name: string,
   background: string,
   headerColor: string,
-  color: string
+  color: string,
+  buttonBackground: string,
+  buttonBackgroundHover: string
 };
 
 interface Context {
@@ -18,28 +20,36 @@ interface Context {
 
 export const themes: ThemeList = {
   purple: {
-    name: 'Purple',
+    name: 'purple',
     headerColor: '#4d277a',
-    background: '#26133d',
-    color: 'white'
+    background: '#160b24',
+    color: 'white',
+    buttonBackground: '#3b2a50',
+    buttonBackgroundHover: '#514263'
   },
   orange: {
     name: 'orange',
     headerColor: '#ffab2a',
-    background: '#b2771d',
-    color: 'white'
+    background: '#b98433',
+    color: 'white',
+    buttonBackground: '#c99f60',
+    buttonBackgroundHover: '#d0ad77'
   },
   blue: {
     name: 'blue',
     headerColor: '#457cff',
     background: '#1b3166',
-    color: 'white'
+    color: 'white',
+    buttonBackground: '#485a84',
+    buttonBackgroundHover: '#7683a3'
   },
   green: {
     name: 'green',
     headerColor: '#769452',
     background: '#3b4a29',
-    color: 'white'
+    color: 'white',
+    buttonBackground: '#626e53',
+    buttonBackgroundHover: '#89927e'
   },
 };
 

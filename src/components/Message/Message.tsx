@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { ThemeContext } from '../style/theme';
+import { ThemeContext } from '../../style/theme';
+import Button from '../Button/Button';
 
 interface UserMessage {
   title: string,
@@ -8,9 +9,12 @@ interface UserMessage {
 }
 
 const Container = styled.div`
+  align-items: center;
   background: ${props => props.theme.background};
   border: 2px solid ${props => props.theme.color};
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   margin: 50px auto;
   padding: 10px 25px;
   transition: 0.3s all ease-in;
@@ -38,6 +42,10 @@ const Message = ({ title, text }: UserMessage): any => {
     <Container theme={theme}>
       <Title theme={theme}>{title}</Title>
       <Text theme={theme}>{text}</Text>
+      <Button
+        text='Button'
+        onClick={() => alert('Hello')}
+      />
     </Container>
   );
 }

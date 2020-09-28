@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { themes, ThemeContext } from '../style/theme';
+import { themes, ThemeContext } from '../../style/theme';
 
 const ThemeBlockContainer = styled.div`
   display: flex;
