@@ -32,7 +32,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "set CI=true && yarn test --coverage"
+    "test:coverage": "set CI=true && yarn test --coverage",
+    "lint:js": "eslint ./src --ext .ts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,7 +54,17 @@
     "styled-components": "^5"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.11.1"
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-airbnb-typescript": "^11.0.0",
+    "eslint-plugin-import": "2.21.2",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-jsx-a11y": "6.3.0",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4.0.0"
   },
   "jest": {
     "collectCoverageFrom": [

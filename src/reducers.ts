@@ -6,7 +6,7 @@ export const initialState: ApplicationState = {
   image: null
 };
 
-const images = (state = initialState, action: ImageActionTypes) => {
+const images = (state = initialState, action: ImageActionTypes): ApplicationState => {
   switch (action.type) {
     case LOAD_IMAGE:
       return {

@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 interface ThemeList {
   [index: string]: Theme
-};
+}
 
 export interface Theme {
   name: string,
@@ -11,12 +11,12 @@ export interface Theme {
   color: string,
   buttonBackground: string,
   buttonBackgroundHover: string
-};
+}
 
 interface Context {
   theme: Theme,
-  setTheme: Function
-};
+  setTheme: (theme: Theme) => void
+}
 
 export const themes: ThemeList = {
   purple: {
