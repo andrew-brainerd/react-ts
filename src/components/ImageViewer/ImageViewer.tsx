@@ -28,6 +28,11 @@ const ImageContainer = styled.div`
   }
 `;
 
+const ControlsContainer = styled.div`
+  align-items: center;
+  display: flex;
+`;
+
 const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: ImageViewerProps) => {
   const { theme } = useContext(ThemeContext);
 
@@ -40,12 +45,14 @@ const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: Image
       <ImageContainer theme={theme}>
         <img src={imageUrl} alt={imageTitle} />
       </ImageContainer>
-      <Button
-        text={'Randomize'}
-        onClick={() => loadRandomImage()}
-        disabled={isLoading}
-        style={{ marginBottom: '25px' }}
-      />
+      <ControlsContainer>
+        <Button
+          text={'Randomize'}
+          onClick={() => loadRandomImage()}
+          disabled={isLoading}
+          style={{ marginBottom: '25px' }}
+        />
+      </ControlsContainer>
     </ImageViewerContainer>
   );
 };
