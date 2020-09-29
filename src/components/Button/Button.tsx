@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 import { ThemeContext } from '../../style/theme';
+import noop from '../../utils/noop';
 
 interface ButtonProps {
   text: string
-  onClick(): void
+  onClick(): void,
+  disabled?: boolean,
+  style?: CSSProperties
 }
 
 const StyledButton = styled.div`
@@ -14,6 +17,7 @@ const StyledButton = styled.div`
   margin: 10px auto;
   padding: 10px 15px;
   transition: 0.3s background ease-in;
+  user-select: none;
   width: ${(props: { width?: string }) => props.width};
 
   :hover {
@@ -27,7 +31,8 @@ const Button = (props: ButtonProps) => {
   return (
     <StyledButton
       theme={theme}
-      onClick={props.onClick}
+      onClick={!props.disabled ? props.onClick : noop}
+      style={props.style}
     >
       {props.text}
     </StyledButton>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from '../../style/theme';
+import Button from '../Button/Button';
 import { ImageViewerProps } from './container';
 
 const ImageViewerContainer = styled.div`
@@ -15,9 +16,10 @@ const ImageContainer = styled.div`
   display: flex;
   height: 70vh;
   justify-content: center;
-  margin: 50px auto;
+  margin: 25px auto;
   overflow: hidden;
   padding: 25px;
+  transition: 0.3s all ease-in;
 
   img {
     object-fit: contain;
@@ -26,7 +28,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ImageViewer = ({ imageUrl, imageTitle, loadRandomImage }: ImageViewerProps) => {
+const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: ImageViewerProps) => {
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
@@ -38,6 +40,12 @@ const ImageViewer = ({ imageUrl, imageTitle, loadRandomImage }: ImageViewerProps
       <ImageContainer theme={theme}>
         <img src={imageUrl} alt={imageTitle} />
       </ImageContainer>
+      <Button
+        text={'Randomize'}
+        onClick={() => loadRandomImage()}
+        disabled={isLoading}
+        style={{ marginBottom: '25px' }}
+      />
     </ImageViewerContainer>
   );
 };
