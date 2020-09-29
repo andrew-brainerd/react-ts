@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import styled from 'styled-components/macro';
 import { ThemeContext } from '../../style/theme';
 import Button from '../Button/Button';
@@ -35,7 +35,7 @@ const Text = styled.div`
   margin: 20px auto;
 `;
 
-const Message = ({ title, text }: UserMessage): any => {
+const Message = ({ title, text }: UserMessage): ReactElement => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -48,6 +48,6 @@ const Message = ({ title, text }: UserMessage): any => {
       />
     </Container>
   );
-}
+};
 
 export default Message;

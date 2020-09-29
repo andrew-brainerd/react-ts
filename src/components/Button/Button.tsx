@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import styled, { CSSProperties } from 'styled-components/macro';
 import { ThemeContext } from '../../style/theme';
 import noop from '../../utils/noop';
 
 interface ButtonProps {
-  text: string
+  text: string,
   onClick(): void,
   disabled?: boolean,
   style?: CSSProperties
@@ -25,7 +25,7 @@ const StyledButton = styled.div`
   }
 `;
 
-const Button = (props: ButtonProps) => {
+const Button = (props: ButtonProps): ReactElement => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -37,6 +37,6 @@ const Button = (props: ButtonProps) => {
       {props.text}
     </StyledButton>
   );
-}
+};
 
 export default Button;

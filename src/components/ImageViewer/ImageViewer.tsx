@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { ReactElement, useContext, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { ThemeContext } from '../../style/theme';
 import Button from '../Button/Button';
@@ -33,7 +33,7 @@ const ControlsContainer = styled.div`
   display: flex;
 `;
 
-const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: ImageViewerProps) => {
+const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: ImageViewerProps): ReactElement => {
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {

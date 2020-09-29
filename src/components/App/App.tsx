@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import styled from 'styled-components/macro';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { Theme, ThemeContext, themes } from '../../style/theme';
@@ -15,7 +15,7 @@ const AppContainer = styled.div`
   text-align: center;
 `;
 
-const App = () => {
+const App = (): ReactElement => {
   const [storedTheme, setStoredTheme] = useLocalStorage('theme', themes.purple);
   const [appTheme, setAppTheme] = useState<Theme>(storedTheme);
 
@@ -32,6 +32,6 @@ const App = () => {
       </ThemeContext.Provider>
     </AppContainer>
   );
-}
+};
 
 export default App;

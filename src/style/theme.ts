@@ -55,5 +55,7 @@ export const themes: ThemeList = {
 
 export const ThemeContext = createContext<Context>({
   theme: themes.purple,
-  setTheme: (theme: Theme) => { }
+  setTheme: (theme: Theme) => {
+    console.log(theme);
+  }
 });

@@ -2,7 +2,7 @@ import { LOAD_IMAGE, IMAGE_LOADED } from './actions';
 
 export interface GiphyImage {
   title: string,
-  images: any[]
+  images: any[] // eslint-disable-line
 }
 
 export interface ApplicationState {

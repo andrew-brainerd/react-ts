@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import styled from 'styled-components/macro';
 import { themes, ThemeContext } from '../../style/theme';
 
@@ -8,7 +8,7 @@ const ThemeBlockContainer = styled.div`
 
 interface SelectedProps {
   isSelected: boolean
-};
+}
 
 const ThemeBlock = styled.div`
   background: ${props => props.theme.background};
@@ -20,7 +20,7 @@ const ThemeBlock = styled.div`
   width: 50px;
 `;
 
-const ThemePicker = () => {
+const ThemePicker = (): ReactElement => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
@@ -35,6 +35,6 @@ const ThemePicker = () => {
       ))}
     </ThemeBlockContainer>
   );
-}
+};
 
 export default ThemePicker;

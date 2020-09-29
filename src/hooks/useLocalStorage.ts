@@ -1,3 +1,4 @@
+// eslint-disable
 import { useState } from 'react';
 
 const useLocalStorage = (key: string, initialValue: any): [any, (value: any) => void] => {
