@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { Theme, ThemeContext, themes } from '../../style/theme';
 import Message from '../Message/Message';
+import ImageViewer from '../ImageViewer/container';
 import ThemePicker from '../ThemePicker/ThemePicker';
 
 const AppContainer = styled.div`
@@ -31,6 +32,7 @@ const App = () => {
           title={'Welcome'}
           text={'Hello, Typescript!'}
         />
+        <ImageViewer />
         <ThemePicker />
       </ThemeContext.Provider>
     </AppContainer>
