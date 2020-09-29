@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import styled, { CSSProperties } from 'styled-components';
+import styled, { CSSProperties } from 'styled-components/macro';
 import { ThemeContext } from '../../style/theme';
 import noop from '../../utils/noop';
 

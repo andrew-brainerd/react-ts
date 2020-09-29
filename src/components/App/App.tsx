@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { Theme, ThemeContext, themes } from '../../style/theme';
 import ImageViewer from '../ImageViewer/container';
