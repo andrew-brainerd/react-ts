@@ -7,7 +7,7 @@ export interface GiphyImage {
 
 export interface ApplicationState {
   isLoadingImage: boolean,
-  image: object | null
+  image: GiphyImage | null
 }
 
 interface LoadImageAction {

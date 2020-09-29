@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { Theme, ThemeContext, themes } from '../../style/theme';
-import Message from '../Message/Message';
 import ImageViewer from '../ImageViewer/container';
 import ThemePicker from '../ThemePicker/ThemePicker';
 
@@ -28,10 +27,6 @@ const App = () => {
   return (
     <AppContainer>
       <ThemeContext.Provider value={{ theme: appTheme, setTheme }}>
-        <Message
-          title={'Welcome'}
-          text={'Hello, Typescript!'}
-        />
         <ImageViewer />
         <ThemePicker />
       </ThemeContext.Provider>
