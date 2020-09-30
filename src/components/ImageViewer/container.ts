@@ -12,7 +12,7 @@ const mapStateToProps = (state: ApplicationState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  loadRandomImage: () => dispatch(loadImage)
+  loadRandomImage: (query: string) => dispatch(loadImage(query))
 });
 
 const connector = connect(mapStateToProps, mapDispatchToProps);

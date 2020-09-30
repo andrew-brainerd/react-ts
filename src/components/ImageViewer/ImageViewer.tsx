@@ -1,7 +1,8 @@
-import React, { ReactElement, useContext, useEffect } from 'react';
+import React, { ReactElement, useContext, useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
 import { ThemeContext } from '../../style/theme';
 import Button from '../Button/Button';
+import TextInput from '../TextInput/TextInput';
 import { ImageViewerProps } from './container';
 
 const ImageViewerContainer = styled.div`
@@ -16,7 +17,7 @@ const ImageContainer = styled.div`
   display: flex;
   height: 70vh;
   justify-content: center;
-  margin: 25px auto;
+  margin: 25px auto 10px auto;
   overflow: hidden;
   padding: 25px;
   transition: 0.3s all ease-in;
@@ -31,13 +32,21 @@ const ImageContainer = styled.div`
 const ControlsContainer = styled.div`
   align-items: center;
   display: flex;
+  justify-content: center;
+
+  div {
+    margin: 25px;
+  }
 `;
 
 const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: ImageViewerProps): ReactElement => {
   const { theme } = useContext(ThemeContext);
+  const [query, setQuery] = useState('turtle');
+
+  console.log({ query });
 
   useEffect(() => {
-    loadRandomImage();
+    loadRandomImage(query);
   }, []); // eslint-disable-line
 
   return (
@@ -46,11 +55,14 @@ const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: Image
         <img src={imageUrl} alt={imageTitle} />
       </ImageContainer>
       <ControlsContainer>
+        <TextInput
+          value={query}
+          onChange={setQuery}
+        />
         <Button
           text={'Randomize'}
-          onClick={() => loadRandomImage()}
+          onClick={() => loadRandomImage(query)}
           disabled={isLoading}
-          style={{ marginBottom: '25px' }}
         />
       </ControlsContainer>
     </ImageViewerContainer>

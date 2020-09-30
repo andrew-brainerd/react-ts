@@ -14,7 +14,7 @@ const StyledButton = styled.div`
   background: ${props => props.theme.buttonBackground};
   border-radius: 10px;
   cursor: pointer;
-  margin: 10px auto;
+  font-size: 20px;
   padding: 10px 15px;
   transition: 0.3s background ease-in;
   user-select: none;

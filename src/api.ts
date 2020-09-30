@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { path } from 'ramda';
+import { ImageResponse } from './types';
 
 export const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
@@ -8,8 +9,9 @@ export const client = axios.create({
   headers: { 'Content-Type': 'application/json' }
 });
 
-export const getRandomImage = async (tag = 'turtle'): Promise<string | undefined> => {
+export const getRandomImage = async (tag = 'turtle'): Promise<ImageResponse | undefined> => {
   const response = await client.get(`/random?api_key=${GIPHY_API_KEY}&tag=${tag}`);
+  console.log({ response });
   return path(['data', 'data'], response);
 };
 
