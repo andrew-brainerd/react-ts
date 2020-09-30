@@ -13,6 +13,7 @@ interface ButtonProps {
 const StyledButton = styled.div`
   background: ${props => props.theme.buttonBackground};
   border-radius: 10px;
+  color: ${props => props.theme.color};
   cursor: pointer;
   font-size: 20px;
   padding: 10px 15px;

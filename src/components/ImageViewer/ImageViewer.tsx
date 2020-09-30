@@ -13,7 +13,7 @@ const ImageContainer = styled.div`
   align-items: center;
   position: relative;
   background: ${props => props.theme.background};
-  border: 2px solid ${props => props.theme.color};
+  border: 2px solid ${props => props.theme.borderColor};
   display: flex;
   height: 70vh;
   justify-content: center;
@@ -42,8 +42,6 @@ const ControlsContainer = styled.div`
 const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: ImageViewerProps): ReactElement => {
   const { theme } = useContext(ThemeContext);
   const [query, setQuery] = useState('turtle');
-
-  console.log({ query });
 
   useEffect(() => {
     loadRandomImage(query);

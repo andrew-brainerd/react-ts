@@ -9,6 +9,7 @@ export interface Theme {
   background: string,
   headerColor: string,
   color: string,
+  borderColor: string,
   buttonBackground: string,
   buttonBackgroundHover: string
 }
@@ -24,6 +25,7 @@ export const themes: ThemeList = {
     headerColor: '#4d277a',
     background: '#160b24',
     color: 'white',
+    borderColor: 'white',
     buttonBackground: '#3b2a50',
     buttonBackgroundHover: '#514263'
   },
@@ -31,7 +33,8 @@ export const themes: ThemeList = {
     name: 'orange',
     headerColor: '#ffab2a',
     background: '#b98433',
-    color: 'white',
+    color: 'black',
+    borderColor: 'white',
     buttonBackground: '#c99f60',
     buttonBackgroundHover: '#d0ad77'
   },
@@ -40,6 +43,7 @@ export const themes: ThemeList = {
     headerColor: '#457cff',
     background: '#1b3166',
     color: 'white',
+    borderColor: 'white',
     buttonBackground: '#485a84',
     buttonBackgroundHover: '#7683a3'
   },
@@ -48,6 +52,7 @@ export const themes: ThemeList = {
     headerColor: '#769452',
     background: '#3b4a29',
     color: 'white',
+    borderColor: 'white',
     buttonBackground: '#626e53',
     buttonBackgroundHover: '#89927e'
   },
