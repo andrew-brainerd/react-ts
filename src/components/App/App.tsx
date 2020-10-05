@@ -11,6 +11,7 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
+  margin: 25px auto;
   min-height: 100vh;
   text-align: center;
 `;

@@ -1,10 +1,12 @@
 import React, { ReactElement, useContext } from 'react';
 import styled from 'styled-components';
+import noop from '../../utils/noop';
 import { ThemeContext } from '../../style/theme';
 
 interface TextInputProps {
   value: string,
-  onChange(value: string): void
+  onChange(value: string): void,
+  onPressEnter(): void
 }
 
 const TextInputContainer = styled.div`
@@ -21,8 +23,18 @@ const TextInputContainer = styled.div`
   }
 `;
 
-const TextInput = ({ value, onChange }: TextInputProps): ReactElement => {
+const TextInput = ({ value, onChange, onPressEnter }: TextInputProps): ReactElement => {
   const { theme } = useContext(ThemeContext);
+
+  const handleKeyPress = ({ key }: { key: string }): void => {
+    if (key === 'Enter') {
+      if (onPressEnter) {
+        onPressEnter();
+      } else {
+        noop();
+      }
+    }
+  };
 
   return (
     <TextInputContainer theme={theme}>
@@ -30,6 +42,7 @@ const TextInput = ({ value, onChange }: TextInputProps): ReactElement => {
         type='text'
         value={value}
         onChange={e => onChange(e.target.value)}
+        onKeyPress={handleKeyPress}
       />
     </TextInputContainer>
   );

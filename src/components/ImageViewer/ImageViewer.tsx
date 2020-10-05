@@ -15,7 +15,7 @@ const ImageContainer = styled.div`
   background: ${props => props.theme.background};
   border: 2px solid ${props => props.theme.borderColor};
   display: flex;
-  height: 70vh;
+  height: 60vh;
   justify-content: center;
   margin: 25px auto 10px auto;
   overflow: hidden;
@@ -56,6 +56,7 @@ const ImageViewer = ({ isLoading, imageUrl, imageTitle, loadRandomImage }: Image
         <TextInput
           value={query}
           onChange={setQuery}
+          onPressEnter={() => loadRandomImage(query)}
         />
         <Button
           text={'Randomize'}
